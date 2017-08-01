@@ -1,0 +1,21 @@
+{
+  "name": "file-explorer",
+  "version": "1.0.0",
+  "description": "File Explorer desktop application",
+  "main": "index.html",
+  "scripts": {
+    "start": "nw .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/girtri/file-explorer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/girtri/file-explorer/issues"
+  },
+  "homepage": "https://github.com/girtri/file-explorer#readme"
+}
