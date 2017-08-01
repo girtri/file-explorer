@@ -1,3 +1,6 @@
 
 <p>necessita del framework NW.js</p>
-<pre>sudo npm install nw --global</pre>
+<ul>
+	<li>sudo npm install nw --global</li>
+	<li>npm install nw@0.20.3-sdk --save-dev</li>
+</ul>
