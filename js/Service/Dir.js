@@ -1,7 +1,7 @@
 
-const fs = require( "fs" ), {join, parse} = require("path");
-
-const EventEmitter = require( "events" );
+const fs = require( "fs" ),
+      { join, parse } = require( "path" ),
+      EventEmitter = require( "events" );
 
 class DirService extends EventEmitter
 {
@@ -11,7 +11,7 @@ class DirService extends EventEmitter
 	}
 
 	setDir(dir = "") {
-		let newDir = path.join(this.dir, dir);
+		let newDir = join(this.dir, dir);
 		// Early exit
 		if ( DirService.getStats( newDir ) === false ) {
 			return;
@@ -58,6 +58,14 @@ class DirService extends EventEmitter
 		} catch( e ) {
 			return false;
 		}
+	}
+
+	getDir() {
+    	return this.dir;
+  	}
+
+	getFile(file) {
+    	return join( this.dir, file );
 	}
 };
 
