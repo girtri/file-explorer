@@ -1,22 +1,19 @@
-const { dictionary } = require( "./js/Data/dictionary" );
-const { I18nService } = require( "./js/Service/I18n" );
-const i18nService = new I18nService(dictionary), { LangSelectorView } = require( "./js/View/LangSelector" );
+
+const { I18nService } = require( "./js/Service/I18n" ),
+      { DirService } = require( "./js/Service/Dir" ),
+      { TitleBarActionsView } = require( "./js/View/TitleBarActions" ),
+      { DirListView } = require( "./js/View/DirList" ),
+      { FileListView } = require( "./js/View/FileList" ),
+      { TitleBarPathView } = require( "./js/View/TitleBarPath" ),
+      { LangSelectorView } = require( "./js/View/LangSelector" ),
+			{ dictionary } = require( "./js/Data/dictionary" ),
+      i18nService = new I18nService( dictionary ),
+      dirService = new DirService();
+
+new TitleBarActionsView( document.querySelector( "[data-bind=titlebar]" ), i18nService );
+new DirListView( document.querySelector( "[data-bind=dirList]" ), dirService );
+new FileListView( document.querySelector( "[data-bind=fileList]" ), dirService, i18nService );
+new TitleBarPathView( document.querySelector( "[data-bind=path]" ), dirService );
 new LangSelectorView( document.querySelector( "[data-bind=langSelector]" ), i18nService );
 
-const { TitleBarActionsView } = require("./js/View/TitleBarActions");
-new TitleBarActionsView(document.querySelector("[data-bind=titlebar]", i18nService));
-
-const { DirService } = require( "./js/Service/Dir" ),
-	{ DirListView } = require( "./js/View/DirList" ),
-	dirService = new DirService();
-
-new DirListView( document.querySelector( "[data-bind=dirList]" ), dirService );
 dirService.notify();
-
-const { FileListView } = require( "./js/View/FileList" );
-new FileListView(document.querySelector( "[data-bind=fileList]" ), dirService, i18nService);
-
-const { TitleBarPathView } = require( "./js/View/TitleBarPath" );
-new TitleBarPathView( document.querySelector( "[data-bind=path]" ), dirService );
-
-

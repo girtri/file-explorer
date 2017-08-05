@@ -2,10 +2,10 @@
 class TitleBarActionsView
 {
 	constructor(boundingEl, i18nService) {
-		alert('TitleBarActions: i18nService is undefined = '+(i18nService == undefined));
-		this.i18n = i18nService;
+		if (i18nService == undefined) alert('TitleBarActions: i18nService is undefined!');
 
-		//i18nService.on("update", () => this.translate());
+		this.i18n = i18nService;
+		i18nService.on("update", () => this.translate());
 		// gestione data binding
 		this.closeEl = boundingEl.querySelector("[data-bind=close]");
 		this.unmaximizeEl = boundingEl.querySelector("[data-bind=unmaximize]");
