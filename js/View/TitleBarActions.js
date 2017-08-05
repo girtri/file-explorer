@@ -1,7 +1,12 @@
 
 class TitleBarActionsView
 {
-	constructor(boundingEl) {
+	constructor(boundingEl, i18nService) {
+		alert('TitleBarActions: i18nService is undefined = '+(i18nService == undefined));
+		this.i18n = i18nService;
+
+		//i18nService.on("update", () => this.translate());
+		// gestione data binding
 		this.closeEl = boundingEl.querySelector("[data-bind=close]");
 		this.unmaximizeEl = boundingEl.querySelector("[data-bind=unmaximize]");
 		this.maximizeEl = boundingEl.querySelector("[data-bind=maximize]");
@@ -41,6 +46,13 @@ class TitleBarActionsView
 	toggleMaximize(){
 		this.maximizeEl.classList.toggle("is-hidden");
 		this.unmaximizeEl.classList.toggle("is-hidden");
+	}
+
+	translate() {
+		this.unmaximizeEl.title = this.i18n.translate("RESTORE_WIN", "Restore window");
+		this.maximizeEl.title = this.i18n.translate("MAXIMIZE_WIN", "Maximize window");
+		this.minimizeEl.title = this.i18n.translate("MINIMIZE_WIN", "Minimize window");
+		this.closeEl.title = this.i18n.translate( "CLOSE_WIN", "Close window");
 	}
 }
 
