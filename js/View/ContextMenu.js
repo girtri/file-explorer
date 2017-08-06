@@ -1,5 +1,5 @@
 
-class ConextMenuView 
+class ContextMenuView 
 {
 	constructor( fileService, i18nService ) {
 		this.file = fileService;
@@ -66,4 +66,4 @@ class ConextMenuView
 	}
 }
 
-exports.ConextMenuView = ConextMenuView;
+exports.ContextMenuView = ContextMenuView;
