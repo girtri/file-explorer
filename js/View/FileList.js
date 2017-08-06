@@ -3,10 +3,11 @@ const filesize = require( "filesize" );
 
 class FileListView 
 {
-  constructor( boundingEl, dirService, i18nService ) {
+  constructor( boundingEl, dirService, i18nService, fileService ) {
     this.dir = dirService;
     this.el = boundingEl;
     this.i18n = i18nService;
+    this.file = fileService;
     // Subscribe on DirService updates
     dirService.on("update", () => this.update( dirService.getFileList() ) );
     // Subscribe on i18nService updates
@@ -39,7 +40,7 @@ class FileListView
     Array.from( this.el.querySelectorAll( ".file-list__li" ) ).forEach(( el ) => {
       el.addEventListener( "click", ( e ) => {
         e.preventDefault();
-        nw.Shell.openItem( this.dir.getFile( el.dataset.file ) );
+        this.file.open( el.dataset.file );
       }, false );
     });
   }
