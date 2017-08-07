@@ -23,3 +23,5 @@ new FileListView(document.querySelector( "[data-bind=fileList]" ), dirService, i
 new ContextMenuView(fileService, i18nService );
 
 dirService.notify();
+
+//nw.Window.get().showDevTools();
