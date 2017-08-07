@@ -8,7 +8,8 @@ const { I18nService } = require( "./js/Service/I18n" ),
 	{ LangSelectorView } = require( "./js/View/LangSelector" ),
 	{ dictionary } = require( "./js/Data/dictionary" ),
 	{ FileService } = require( "./js/Service/File" ),
-	{ ContextMenuView } = require("./js/View/ContextMenu");
+	{ ContextMenuView } = require("./js/View/ContextMenu"),
+	{ TrayView } = require( "./js/View/Tray" );
 
 const i18nService = new I18nService( dictionary ),
     dirService = new DirService(),
@@ -21,6 +22,7 @@ new TitleBarPathView( document.querySelector( "[data-bind=path]" ), dirService )
 new LangSelectorView( document.querySelector( "[data-bind=langSelector]" ), i18nService );
 new FileListView(document.querySelector( "[data-bind=fileList]" ), dirService, i18nService, fileService );
 new ContextMenuView(fileService, i18nService );
+new TrayView( "File Explorer" );
 
 dirService.notify();
 

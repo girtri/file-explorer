@@ -31,6 +31,11 @@ class ContextMenuView
 				click: () => file.paste()
 			},
 			{
+				label: this.i18n.translate( "PASTE_FROM_CLIPBOARD", "Paste image from clipboard"),
+				enabled: file.hasImageInClipboard(),
+				click: () => file.pasteFromClipboard()
+			},
+			{
 				type: "separator"
 			},
 			{
