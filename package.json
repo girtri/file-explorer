@@ -24,7 +24,8 @@
     "nw": "^0.20.3-sdk"
   },
   "dependencies": {
-    "filesize": "^3.5.5"
+    "filesize": "^3.5.5",
+    "minimist": "^1.2.0"
   },
   "chromium-args": "--mixed-context",
   "window": {
@@ -35,6 +36,8 @@
     "min_width": 800,
     "min_height": 400,
     "position": "center",
-    "resizable": true
+    "resizable": true,
+    "frame": false,
+    "transparent": true
   }
 }

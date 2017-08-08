@@ -8,6 +8,7 @@
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: flex-end;
+	border-radius: 0 0 var(--border-radius) var(--border-radius);
 }
 
 .footer__header {

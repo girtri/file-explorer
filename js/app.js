@@ -11,9 +11,11 @@ const { I18nService } = require( "./js/Service/I18n" ),
 	{ ContextMenuView } = require("./js/View/ContextMenu"),
 	{ TrayView } = require( "./js/View/Tray" );
 
-const i18nService = new I18nService( dictionary ),
-    dirService = new DirService(),
-    fileService = new FileService( dirService );
+const argv = require( "minimist" )( nw.App.argv ),
+	dirService = new DirService( argv._[ 0 ] );
+
+const i18nService = new I18nService(dictionary),
+    fileService = new FileService(dirService);
 
 new TitleBarActionsView( document.querySelector( "[data-bind=titlebar]" ), i18nService );
 new DirListView( document.querySelector( "[data-bind=dirList]" ), dirService );
@@ -24,6 +26,16 @@ new FileListView(document.querySelector( "[data-bind=fileList]" ), dirService, i
 new ContextMenuView(fileService, i18nService );
 new TrayView( "File Explorer" );
 
+//nw.Window.get().showDevTools();
 dirService.notify();
 
-//nw.Window.get().showDevTools();
+/*
+ per il command line funziona questo comando di avvio!?
+ nw . \temp --maximize (il secondo pa)
+ NB: il secondo parametro non viene letto se uso: npm start \temp --maximize 
+*/
+if ( argv.maximize ) {
+	nw.Window.get().maximize();
+} else if ( argv.minimize ) {
+	nw.Window.get().minimize();	
+}

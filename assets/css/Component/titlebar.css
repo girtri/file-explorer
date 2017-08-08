@@ -8,6 +8,7 @@
 	display: flex;
 	flex-flow: row nowrap;
 	align-items: stretch;
+	border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
 
 .titlebar__path {
