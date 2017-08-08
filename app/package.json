@@ -1,0 +1,43 @@
+{
+  "name": "file-explorer",
+  "version": "1.0.0",
+  "description": "File Explorer desktop application",
+  "main": "index.html",
+  "scripts": {
+    "start": "nw .",
+    "test": "nw tests/unit-tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/girtri/file-explorer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/girtri/file-explorer/issues"
+  },
+  "homepage": "https://github.com/girtri/file-explorer#readme",
+  "devDependencies": {
+    "fs-jetpack": "^1.1.0",
+    "mock-fs": "^4.4.1",
+    "nw": "^0.20.3-sdk"
+  },
+  "dependencies": {
+    "filesize": "^3.5.5",
+    "minimist": "^1.2.0"
+  },
+  "chromium-args": "--mixed-context",
+  "window": {
+    "show": true,
+    "frame": true,
+    "width": 1000,
+    "height": 600,
+    "min_width": 800,
+    "min_height": 400,
+    "position": "center",
+    "resizable": true,
+    "frame": false,
+    "transparent": true
+  }
+}
