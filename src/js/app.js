@@ -1,15 +1,15 @@
 
-const { I18nService } = require( "./js/Service/I18n" ),
-	{ DirService } = require( "./js/Service/Dir" ),
-	{ TitleBarActionsView } = require( "./js/View/TitleBarActions" ),
-	{ DirListView } = require( "./js/View/DirList" ),
-	{ FileListView } = require( "./js/View/FileList" ),
-	{ TitleBarPathView } = require( "./js/View/TitleBarPath" ),
-	{ LangSelectorView } = require( "./js/View/LangSelector" ),
-	{ dictionary } = require( "./js/Data/dictionary" ),
-	{ FileService } = require( "./js/Service/File" ),
-	{ ContextMenuView } = require("./js/View/ContextMenu"),
-	{ TrayView } = require( "./js/View/Tray" );
+const { I18nService } = require( "./Service/I18n" ),
+	{ DirService } = require( "./Service/Dir" ),
+	{ TitleBarActionsView } = require( "./View/TitleBarActions" ),
+	{ DirListView } = require( "./View/DirList" ),
+	{ FileListView } = require( "./View/FileList" ),
+	{ TitleBarPathView } = require( "./View/TitleBarPath" ),
+	{ LangSelectorView } = require( "./View/LangSelector" ),
+	{ dictionary } = require( "./Data/dictionary" ),
+	{ FileService } = require( "./Service/File" ),
+	{ ContextMenuView } = require("./View/ContextMenu"),
+	{ TrayView } = require( "./View/Tray" );
 
 const argv = require( "minimist" )( nw.App.argv ),
 	dirService = new DirService( argv._[ 0 ] );
